@@ -20,7 +20,16 @@ function* createUser({payload}) {
     yield put({type: actions.CREATE_USER, payload: newUser});
 }
 
+function* deleteUser({payload}) {
+    yield put({type: actions.SET_LOADING});
+
+    yield call(api.deleteUser, payload);
+
+    yield call(getAllUsers);
+}
+
 export default function* Sagas() {
     yield takeEvery(actions.GET_USERS_REQUESTED, getAllUsers)
     yield takeEvery(actions.CREATE_USER_REQUESTED, createUser)
+    yield takeEvery(actions.DELETE_USER_REQUESTED, deleteUser)
 }

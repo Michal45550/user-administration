@@ -23,3 +23,11 @@ export const addUser = async (user) => {
         return console.error(err);
     }
 }
+
+export const deleteUser = async (id) => {
+    try {
+        await axiosInstance.delete(`users/${id}`);
+    } catch (err) {
+        return console.error(err);
+    }
+}

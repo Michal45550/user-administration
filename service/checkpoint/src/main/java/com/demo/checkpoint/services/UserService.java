@@ -1,13 +1,15 @@
 package com.demo.checkpoint.services;
 
-import com.demo.checkpoint.model.User;
+import com.demo.checkpoint.beans.UserBean;
 
 import java.util.List;
 
 public interface UserService {
 
-    List<User> getAll();
+    List<UserBean> getAll();
 
-    User addUser(User user);
+    UserBean addUser(UserBean user);
+
+    void deleteUser(int id);
 
 }
