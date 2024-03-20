@@ -1,11 +1,11 @@
 import {useState} from 'react';
-import './NewUser.css';
+import './NewUserModal.css';
 import Modal from '@mui/material/Modal';
 import {Box, FormControl, TextField} from "@mui/material";
 import {useDispatch} from "react-redux";
 import {CREATE_USER_REQUESTED} from "../../actions.js";
 
-const NewUser = () => {
+const NewUserModal = () => {
 
     const dispatch = useDispatch();
 
@@ -94,6 +94,7 @@ const NewUser = () => {
                                         value={userData.emailAddress}
                                         required
                                         onChange={handleInputChange}
+                                        type="email"
                                     />
                                 </FormControl>
                             </Box>
@@ -107,6 +108,7 @@ const NewUser = () => {
                                         value={userData.password}
                                         required
                                         onChange={handleInputChange}
+                                        type="password"
                                     />
                                 </FormControl>
                             </Box>
@@ -120,4 +122,4 @@ const NewUser = () => {
     );
 };
 
-export default NewUser;
+export default NewUserModal;

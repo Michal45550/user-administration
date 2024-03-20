@@ -24,28 +24,37 @@ const UserTable = () => {
     }
 
     return (
-        users.length ? <TableContainer component={Paper}>
+        <TableContainer component={Paper}>
             <Table>
                 <TableHead>
                     <TableRow>
-                        {columns.map((column) => (<TableCell key={column.id} style={{minWidth: column.minWidth}}>
-                            {column.label}
-                        </TableCell>))}
+                        {columns.map((column) => (
+                            <TableCell key={column.id} style={{minWidth: column.minWidth}}>
+                                {column.label}
+                            </TableCell>))}
                         <TableCell key={"empty"}></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {users.map((row, rowIndex) => (<TableRow key={rowIndex}>
-                        {columns.map((column) => (<TableCell key={column.id}>{row[column.id]}</TableCell>))}
-                        <TableCell key={"delete"} onClick={() => handleDelete(row.id)}>
-                            <img src={deleteIcon}
-                                 alt="Delete" width="30px"
-                                 height="30px"/>
-                        </TableCell>
-                    </TableRow>))}
+                    {users.length ? users.map((row, rowIndex) => (
+                            <TableRow key={rowIndex}>
+                                {columns.map((column) => (
+                                    <TableCell key={column.id}>
+                                        {row[column.id]}
+                                    </TableCell>
+                                ))}
+                                <TableCell key={"delete"} onClick={() => handleDelete(row.id)}>
+                                    <img src={deleteIcon}
+                                         alt="Delete" width="30px"
+                                         height="30px"/>
+                                </TableCell>
+                            </TableRow>))
+                        : <TableRow>
+                            <TableCell>no data</TableCell>
+                        </TableRow>}
                 </TableBody>
             </Table>
-        </TableContainer> : "no data"
+        </TableContainer>
     );
 };
 
