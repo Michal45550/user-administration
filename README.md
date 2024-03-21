@@ -14,8 +14,8 @@ How to run this project:
 
 
 What should be added or improved:
-1. Add logging in service
+1. Add logs in service
 2. Encrypt the password
-3. Add 'show password' eye button in new user form
+3. Add 'show password' eye button in 'add user' form
 4. Error handling in client application
-      
+5. Add some unit tests    
