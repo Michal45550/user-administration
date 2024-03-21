@@ -31,7 +31,6 @@ public class UserServiceImpl implements UserService {
     @Override
     @Retryable(value = {DataAccessException.class}, maxAttempts = 2, backoff = @Backoff(delay = 1000))
     public UserBean addUser(@Valid UserBean user) {
-        //TODO: add validations
         User newUser = userRepository.save(toDto(user));
         return toBean(newUser);
     }
@@ -39,7 +38,6 @@ public class UserServiceImpl implements UserService {
     @Override
     @Retryable(value = {DataAccessException.class}, maxAttempts = 2, backoff = @Backoff(delay = 1000))
     public void deleteUser(int id) {
-        // TODO: add validation
         userRepository.deleteById(id);
     }
 

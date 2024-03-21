@@ -16,6 +16,10 @@ const NewUserModal = () => {
         password: ""
     }
 
+    const inputProps = {
+        maxLength: 40,
+    };
+
     const [open, setOpen] = useState(false);
     const [userData, setUserData] = useState(USER_DATA);
 
@@ -68,6 +72,7 @@ const NewUserModal = () => {
                                         value={userData.firstName}
                                         required
                                         onChange={handleInputChange}
+                                        inputProps={inputProps}
                                     />
                                 </FormControl>
                             </Box>
@@ -81,6 +86,7 @@ const NewUserModal = () => {
                                         value={userData.lastName}
                                         required
                                         onChange={handleInputChange}
+                                        inputProps={inputProps}
                                     />
                                 </FormControl>
                             </Box>
@@ -95,6 +101,7 @@ const NewUserModal = () => {
                                         required
                                         onChange={handleInputChange}
                                         type="email"
+                                        inputProps={inputProps}
                                     />
                                 </FormControl>
                             </Box>
@@ -109,6 +116,7 @@ const NewUserModal = () => {
                                         required
                                         onChange={handleInputChange}
                                         type="password"
+                                        inputProps={inputProps}
                                     />
                                 </FormControl>
                             </Box>

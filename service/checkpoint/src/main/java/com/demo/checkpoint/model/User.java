@@ -2,6 +2,7 @@ package com.demo.checkpoint.model;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -34,6 +35,7 @@ public class User {
 
     @NotNull
     @Size(max = 40)
+    @Email(message = "Email should be valid")
     @Column(name = "`email address`", length = 40, nullable = false)
     private String emailAddress;
 
