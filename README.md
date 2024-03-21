@@ -4,11 +4,11 @@ User administration service
 
 How to run this project:
 
-1. run "add as a maven project" for aliens-service
-2. run the aliens-service application
+1. run "add as a maven project" for service
+2. run the service application
 
-3. run "npm install" for aliens-client
-4. run "npm run dev" for aliens-client
+3. run "npm install" for client
+4. run "npm run dev" for client
 5. access the application in http://localhost:5173/
 
 
